@@ -1,0 +1,234 @@
+@font-face {
+    src: url('fonts/Danfo-Regular.ttf');
+    font-family: "Danfo Regular";
+}
+
+@font-face {
+    font-family: "Amatic-Bold";
+    src: url('fonts/AmaticSC-Bold.ttf');
+}
+
+@font-face {
+    font-family: "Amatic-Regular";
+    src: url('fonts/AmaticSC-Regular.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0px 150px;
+    background-color: rgb(202, 207, 250);
+}
+
+.resume {
+    font-family: "Danfo Regular", Helvetica, Arial, sans-serif;
+    padding: 5px 0px 5px 10px;
+    margin: 0px;
+}
+
+hr {
+    height: 4px;
+    background-color:black;
+    border: none;
+}
+
+header {
+    display: inline;
+}
+
+.heading{
+    text-align: center;
+    font-family: "Amatic-Bold", Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    margin: 0px
+}
+
+.job {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.about{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 25px 50px;
+    flex-wrap:wrap;
+}
+
+.text{
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 10px 10px;
+    max-width: 75%;
+    max-height: 200px;
+    border-left: solid;
+    border-color: rgb(0, 0, 0);
+    border-width: 7px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color:rgb(222, 229, 255);
+    color: black;
+    opacity: 1;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+}
+
+.image {
+    max-width: 300px; 
+    max-height: 310px; 
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 320px);
+}
+
+p {
+    margin: 10px 0px;
+}
+
+.projects {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.timeline {
+    display: flex;
+    align-items: center;
+    gap: 140px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.item{
+    background: rgb(174, 181, 251);
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.item:last-child {
+    background: rgb(174, 181, 251, 0.5);
+}
+
+.item:not(:last-child)::before {
+    background: linear-gradient(90deg, rgba(182, 197, 255, 0.8) 0%, rgba(182, 197, 255, 0.4) 100%);
+    position: absolute;
+    content: '';
+    width: 140px;
+    height: 4px;
+    top: calc(80px/2 - 2px);
+    left: 80px;
+}
+
+.item:after {
+    content: attr(data-text);
+    position: absolute;
+    bottom: -50px;
+    text-align: center;
+    font-family: "Amatic-Bold", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.icon:hover {
+    background:rgb(211, 218, 254);
+}
+
+a:active, 
+a:hover,  
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0px 20px;
+    }
+
+    .heading {
+        font-size: 35px;
+    }
+
+    .job {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .about {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .image {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .text {
+        max-width: 100%;
+        max-height: none;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .projects {
+        height: auto;
+    }
+
+    .timeline {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .item {
+        position: relative;
+        margin-bottom: 60px;
+    }
+
+    .item:not(:last-child)::before {
+        width: 4px;
+        height: 80px;
+        top: 80px;
+        left: 40px;
+        transform: translateX(-50%);
+    }
+
+    .item:after {
+        content: attr(data-text);
+        position: absolute;
+        bottom: 50%;
+        left: 120%;
+        transform: translateY(50%);
+        text-align: left;
+        font-family: "Amatic-Bold", Helvetica, Arial, sans-serif;
+        font-size: 20px;
+    }
+}
